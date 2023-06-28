@@ -27,6 +27,6 @@ jobs:
     - name: Install dependencies
       run: npm install
       working-directory: ./prodify
-    - name: Run dev script
-      run: npm start
+    - name: Build app
+      run: npm run build
       working-directory: ./prodify
