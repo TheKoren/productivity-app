@@ -28,5 +28,5 @@ jobs:
       run: npm install
       working-directory: ./prodify
     - name: Run dev script
-      run: npm run dev
+      run: npm start
       working-directory: ./prodify
