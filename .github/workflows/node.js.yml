@@ -14,16 +14,18 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x, 16.x, 18.x]
+        node-version: [16.x]
 
     steps:
     - uses: actions/checkout@v3
-    - name: Navigate to project directory
-      run: cd prodify
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm install
-    - run: npm run dev
+    - name: Install dependencies
+      run: npm install
+      working-directory: ./prodify
+    - name: Run dev script
+      run: npm run dev
+      working-directory: ./prodify
