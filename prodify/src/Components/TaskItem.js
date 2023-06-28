@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./TaskItem.css";
 
 function TaskItem({ task, onRemove, onUpdate }) {
   const [isEditMode, setIsEditMode] = useState(false);
@@ -35,7 +36,7 @@ function TaskItem({ task, onRemove, onUpdate }) {
   };
 
   return (
-    <li>
+    <li className={isEditMode ? "edit-mode" : ""}>
       {isEditMode ? (
         <>
           <input
@@ -43,11 +44,13 @@ function TaskItem({ task, onRemove, onUpdate }) {
             name="name"
             value={editedTask.name}
             onChange={handleChange}
+            className="edit-input"
           />
           <textarea
             name="description"
             value={editedTask.description}
             onChange={handleChange}
+            className="edit-textarea"
           ></textarea>
           <input
             type="date"
@@ -55,16 +58,28 @@ function TaskItem({ task, onRemove, onUpdate }) {
             value={editedTask.deadline}
             onChange={handleChange}
           />
-          <button onClick={handleSave}>Save</button>
-          <button onClick={handleCancel}>Cancel</button>
+         <div className="edit-buttons">
+            <button className="save-button" onClick={handleSave}>
+              Save
+            </button>
+            <button className="cancel-button" onClick={handleCancel}>
+              Cancel
+            </button>
+          </div>
         </>
       ) : (
         <>
           <h3>{task.name}</h3>
           <p>{task.description}</p>
           {task.deadline && <p>Deadline: {task.deadline}</p>}
-          <button onClick={handleEdit}>Edit</button>
-          <button onClick={onRemove}>Remove</button>
+          <div className="view-buttons">
+            <button className="edit-button" onClick={handleEdit}>
+              Edit
+            </button>
+            <button className="remove-button" onClick={onRemove}>
+              Remove
+            </button>
+          </div>
         </>
       )}
     </li>

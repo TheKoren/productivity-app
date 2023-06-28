@@ -36,7 +36,9 @@ function TaskList() {
 
   return (
     <>
-      <button onClick={openPopup}>Add Task</button>
+      <button className="add-task-button" onClick={openPopup}>
+          Add Task
+        </button>
 
       {isPopupOpen && <TaskPopup onClose={closePopup} onSave={addTask} />}
 
