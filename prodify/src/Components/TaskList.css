@@ -65,3 +65,78 @@
   .add-task-button:hover {
     background-color: #1a57d6;
   }
+
+  .task-list-container {
+    display: flex;
+  }
+  
+  .side-menu {
+    flex: 0 0 200px;
+    background-color: #f5f5f5;
+    padding: 20px;
+  }
+  
+  .menu-heading {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .board-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .board-item {
+    cursor: pointer;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+  }
+  
+  .board-item.active {
+    background-color: #ccc;
+  }
+  
+  .add-board-button {
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3498db;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .task-content {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .add-task-button {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3498db;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .task-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .task-item {
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+  }
+  
+  .task-item:last-child {
+    margin-bottom: 0;
+  }
